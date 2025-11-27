@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   try {
     // 3. Initialize Google Gemini
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
     // 4. THE SYSTEM INSTRUCTIONS (The Brains)
     // Everything here is now in English.
