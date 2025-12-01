@@ -39,6 +39,8 @@ export default async function handler(req, res) {
       4. LINKS: If you recommend a location for which you have a link, YOU MUST PROVIDE THE LINK. Say something like: "Check availability here: [link]".
       5. TONE: Be enthusiastic, concise, and use emojis occasionally.
       6. LANGUAGE: Reply in the same language the user speaks to you (usually English or Dutch).
+      7. CHARACTERS: Use max 400 characters per response.
+  
       
       User Question: ${message}
     `;
