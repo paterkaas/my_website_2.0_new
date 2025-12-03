@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact TravelCompAInon">
+    <title>Contact | TravelCompAInon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .form-group input, 
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        .contact-sidebar {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">TravelComp<span>AI</span>non</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#destinations">Destinations</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <h1>Contact</h1>
+            <div class="location-sub">
+                <span>Questions? Feedback? Let us know.</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="detail-grid"> <div class="contact-sidebar">
+                    <h3>Direct Contact</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-gray);">Have a tip for a hidden gem in Brabant or found a bug on the site?</p>
+                    
+                    <ul class="info-specs">
+                        <li>📧 <strong>Email:</strong> info@travelcompainon.nl</li>
+                        <li>📍 <strong>Location:</strong> Bergeijk, North Brabant</li>
+                        <li>🤖 <strong>AI Support:</strong> Use the chat bottom right</li>
+                    </ul>
+
+                    <div style="margin-top: 2rem;">
+                        <p><strong>About us:</strong><br>
+                        We are a small team combining modern technology with Brabant hospitality.</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h2>Send a message</h2>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>TravelCompAInon</h3>
+                <p>Your local AI friend in Brabant.</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 TravelCompAInon. All rights reserved.
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <span>Brabant Insider AI</span>
+            <button id="close-chat" style="background:none; border:none; color:white; font-size:1.2rem; cursor:pointer;">&times;</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">
+                Hi! I can't help with the contact form, but I can give you travel tips!
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your question..." id="user-input">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chat-toggle">💬</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
