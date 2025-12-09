@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI Analysis of Recreation Park Terspegelt">
     <title>Terspegelt Review | TravelCompAInion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,23 +16,9 @@
         <div class="blob blob-3"></div>
     </div>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">TravelComp<span>AI</span>nion</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#destinations">Destinations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
-    <header class="page-hero" style="padding-top: 150px; padding-bottom: 100px; text-align: center; position: relative;">
+    <header class="page-hero" style="padding-top: 150px; padding-bottom: 80px; text-align: center;">
         <div class="container reveal-up">
             <h1 style="color: var(--dark-bg); font-size: 3.5rem;">Recreatiepark Terspegelt</h1>
             <div class="location-sub" style="color: var(--text-gray); font-size: 1.2rem; margin-top: 10px;">
@@ -44,7 +30,7 @@
                 9.8 AI Score
             </div>
         </div>
-    </header>
+        </header>
 
     <section class="section">
         <div class="container">
@@ -54,7 +40,7 @@
                 <div class="detail-image-container reveal-up delay-100" style="text-align: center;">
                     <img src="assets/terspegelt-image.jpg" alt="Terspegelt View" class="detail-img organic-shape" style="width: 100%; height: 350px; object-fit: cover;">
                     
-                    <a href="https://www.booking.com/hotel/nl/recreatiepark-terspegelt" target="_blank" class="btn btn-affiliate" style="width: 100%; margin-top: 20px; background: #f59e0b; color: white; display: block; text-align: center; padding: 15px; border-radius: 15px; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);">
+                    <a href="https://www.booking.com/hotel/nl/recreatiepark-terspegelt" target="_blank" class="btn btn-affiliate" style="width: 100%; margin-top: 20px; display: block; text-align: center;">
                         Check Availability & Prices ↗
                     </a>
                 </div>
@@ -79,34 +65,43 @@
                 <div class="analysis-card glass-card reveal-up delay-100" style="border-top: 4px solid #10b981;">
                     <h3>✅ What People Love</h3>
                     <ul class="check-list">
-                        <li><strong>The "Sterrenstrand":</strong> A unique indoor sand and water playground.</li>
-                        <li><strong>Activities for Teens:</strong> The Blob, Pumptrack, and chill zones.</li>
-                        <li><strong>Cleanliness:</strong> Sanitary facilities score exceptionally high (9.4/10).</li>
+                        <li><strong>The "Sterrenstrand":</strong> A unique indoor sand and water playground that is a hit in any weather.</li>
+                        <li><strong>Activities for Teens:</strong> Unlike many parks, Terspegelt offers "The Blob", Pumptrack, and chill zones specifically for ages 12+.</li>
+                        <li><strong>Cleanliness:</strong> Sanitary facilities score exceptionally high (9.4/10) in recent reviews.</li>
+                        <li><strong>High-End Glamping:</strong> The lounge lodges right on the water are highly recommended.</li>
                     </ul>
                 </div>
 
                 <div class="analysis-card glass-card reveal-up delay-200" style="border-top: 4px solid #f59e0b;">
                     <h3>⚠️ Things to Consider</h3>
                     <ul class="check-list warning">
-                        <li><strong>Pricey:</strong> Top price segment.</li>
-                        <li><strong>Busy:</strong> Fully booked in summer.</li>
-                        <li><strong>Strict Rules:</strong> Quiet hours are enforced.</li>
+                        <li><strong>Pricey:</strong> It is in the top price segment. You pay for the 5-star quality.</li>
+                        <li><strong>Busy:</strong> In July/August, the park is fully booked. The pool can get crowded.</li>
+                        <li><strong>Strict Rules:</strong> Some guests mention strict enforcement of quiet hours (which others love).</li>
                     </ul>
                 </div>
 
                 <div class="analysis-card glass-card reveal-up delay-300">
                     <h3>📊 AI Rating Breakdown</h3>
+                    
                     <div style="margin-bottom: 15px;">
                         <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Hygiene</span> <span>9.4</span></div>
                         <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:94%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
+
                     <div style="margin-bottom: 15px;">
-                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Atmosphere</span> <span>9.6</span></div>
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Location & Atmosphere</span> <span>9.6</span></div>
                         <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:96%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
-                    <div>
+
+                    <div style="margin-bottom: 15px;">
                         <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Child Friendliness</span> <span>9.9</span></div>
                         <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:99%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
+                    </div>
+
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Price / Quality</span> <span>8.5</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:85%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
                 </div>
 
@@ -115,55 +110,8 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3>TravelCompAInion</h3>
-                <p>Your local AI friend in Brabant.</p>
-            </div>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </footer>
-
-    <div class="chat-widget" id="chat-widget">
-        <div class="chat-header">
-            <span>Brabant Insider AI</span>
-            <button id="close-chat" style="background:none; border:none; color:white; font-size:1.2rem; cursor:pointer;">&times;</button>
-        </div>
-        <div class="chat-body" id="chat-body">
-            <div class="message bot">
-                Hi! Asking about Terspegelt? It's a great choice. What do you want to know?
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" placeholder="Type your question..." id="user-input">
-            <button id="send-btn">Send</button>
-        </div>
-    </div>
-    <button class="chat-toggle" id="chat-toggle">💬</button>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
-    <script>
-        // Scroll Reveal & Chat Trigger
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('active');
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
-            
-            // Detail knop opent chat
-            const detailBtn = document.getElementById('detail-chat-btn');
-            if(detailBtn) {
-                detailBtn.addEventListener('click', () => {
-                    document.getElementById('chat-widget').classList.add('active');
-                });
-            }
-        });
-    </script>
 </body>
 </html>

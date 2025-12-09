@@ -1,4 +1,6 @@
-/* --- 1. CONFIGURATION & VARIABLES --- */
+/* ==========================================================================
+   1. CONFIGURATION & VARIABLES
+   ========================================================================== */
 :root {
     --primary: #6366f1;       /* Indigo */
     --primary-soft: rgba(99, 102, 241, 0.1);
@@ -9,10 +11,11 @@
     --text-light: #f8fafc;
     --text-gray: #64748b;
     
+    /* Nieuwe Speelse Fonts */
     --font-heading: 'Fredoka', sans-serif; 
     --font-body: 'Quicksand', sans-serif;
     
-    --glass: rgba(255, 255, 255, 0.95); /* Iets minder doorzichtig voor leesbaarheid menu */
+    --glass: rgba(255, 255, 255, 0.95); /* Minder doorzichtig voor betere leesbaarheid */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -20,24 +23,29 @@
 body {
     font-family: var(--font-body);
     color: var(--text-main);
-    background-color: #f0fdfa;
+    background-color: #f0fdfa; /* Fris mint-wit tintje */
     line-height: 1.7;
     overflow-x: hidden;
     position: relative;
     font-weight: 500;
 }
 
-/* --- 2. TYPOGRAPHY --- */
+/* ==========================================================================
+   2. TYPOGRAPHY
+   ========================================================================== */
 h1, h2, h3 { font-family: var(--font-heading); letter-spacing: 0.5px; font-weight: 600; }
 h1 { color: var(--dark-bg); }
 
+/* Highlight effect (brush stroke) */
 .highlight-brush { position: relative; z-index: 1; white-space: nowrap; color: var(--primary); }
 .highlight-brush::after {
     content: ''; position: absolute; bottom: 5px; left: -5px; width: 105%; height: 12px;
     background: var(--accent); opacity: 0.3; z-index: -1; transform: rotate(-2deg); border-radius: 10px;
 }
 
-/* --- 3. BACKGROUND BLOBS --- */
+/* ==========================================================================
+   3. BACKGROUND BLOBS (Sfeer)
+   ========================================================================== */
 .blob-cont { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; overflow: hidden; pointer-events: none; }
 .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; animation: floatBlob 20s infinite alternate; }
 .blob-1 { width: 500px; height: 500px; background: #e0e7ff; top: -100px; left: -100px; }
@@ -45,7 +53,9 @@ h1 { color: var(--dark-bg); }
 .blob-3 { width: 350px; height: 350px; background: #fef3c7; top: 40%; left: 30%; animation-duration: 25s; opacity: 0.4; }
 @keyframes floatBlob { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(40px, 40px) scale(1.05); } }
 
-/* --- 4. NAVIGATION --- */
+/* ==========================================================================
+   4. NAVIGATION (Met Mobile Dropdown)
+   ========================================================================== */
 .navbar {
     position: fixed; top: 0; width: 100%; padding: 1rem 0; z-index: 1000;
     background: rgba(255, 255, 255, 0.9);
@@ -65,8 +75,12 @@ h1 { color: var(--dark-bg); }
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
 .bar { width: 30px; height: 3px; background-color: var(--text-main); border-radius: 3px; transition: 0.3s; }
 
-/* --- 5. HERO SECTION --- */
-.hero { min-height: 90vh; display: flex; align-items: center; position: relative; padding-top: 60px; padding-bottom: 60px; }
+/* ==========================================================================
+   5. HERO & SECTIONS
+   ========================================================================== */
+.hero, .page-hero { min-height: auto; position: relative; }
+.hero { padding-top: 140px; padding-bottom: 60px; display: flex; align-items: center; } 
+
 .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
 .hero-text-wrapper { flex: 1; }
 .hero h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem; }
@@ -81,7 +95,15 @@ h1 { color: var(--dark-bg); }
 }
 .organic-shape:hover { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
 
-/* --- 6. BUTTONS --- */
+/* Sections */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 4rem 0; position: relative; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { font-size: 2.8rem; color: var(--dark-bg); margin-bottom: 0.5rem; }
+
+/* ==========================================================================
+   6. BUTTONS & CARDS
+   ========================================================================== */
 .btn { padding: 15px 35px; border-radius: 25px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; border: none; font-family: var(--font-body); }
 .btn-primary { background: var(--primary); color: white; box-shadow: 0 8px 20px -5px rgba(99, 102, 241, 0.4); }
 .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 25px -5px rgba(99, 102, 241, 0.5); }
@@ -89,14 +111,7 @@ h1 { color: var(--dark-bg); }
 .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
 .btn-affiliate { background: var(--accent); color: white; box-shadow: 0 8px 20px -5px rgba(245, 158, 11, 0.4); }
 
-/* --- 7. CARDS & SECTIONS --- */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.section { padding: 6rem 0; position: relative; }
-.section-header { text-align: center; margin-bottom: 4rem; }
-.section-header h2 { font-size: 2.8rem; color: var(--dark-bg); margin-bottom: 0.5rem; }
-.features-grid, .destinations-grid { display: grid; gap: 2.5rem; }
-
-.features-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+/* Glass Cards */
 .glass-card {
     background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 2px solid rgba(255,255,255,0.8);
     padding: 2.5rem; border-radius: 30px; transition: 0.3s;
@@ -104,7 +119,11 @@ h1 { color: var(--dark-bg); }
 .glass-card:hover { transform: translateY(-8px); background: white; border-color: var(--primary-soft); }
 .icon-box { font-size: 3rem; margin-bottom: 1rem; }
 
+/* Destination Cards */
+.destinations-grid, .features-grid { display: grid; gap: 2.5rem; }
+.features-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .destinations-grid { grid-template-columns: repeat(3, 1fr); }
+
 .card {
     background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.06);
     transition: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); border: none;
@@ -118,14 +137,25 @@ h1 { color: var(--dark-bg); }
 .location { color: var(--primary); font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
 .btn-link { color: var(--secondary); font-weight: 800; text-decoration: none; display: inline-block; margin-top: 1rem; font-size: 1.1rem; }
 
+/* Detail Grid Layout */
 @media (min-width: 969px) { .detail-grid { display: grid; grid-template-columns: 400px 1fr; gap: 3rem; align-items: start; } }
 
-/* Animations */
+/* Analysis Lists */
+.check-list { list-style: none; }
+.check-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; color: var(--text-main); }
+.check-list li::before { content: '✓'; position: absolute; left: 0; color: #10b981; font-weight: bold; }
+.check-list.warning li::before { content: '!'; color: #f59e0b; }
+
+/* ==========================================================================
+   7. ANIMATIONS (Scroll Reveal)
+   ========================================================================== */
 .reveal-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 .reveal-up.active { opacity: 1; transform: translateY(0); }
 .delay-100 { transition-delay: 0.1s; } .delay-200 { transition-delay: 0.2s; } .delay-300 { transition-delay: 0.3s; }
 
-/* --- RESPONSIVE & MOBILE MENU --- */
+/* ==========================================================================
+   8. RESPONSIVE & MOBILE MENU
+   ========================================================================== */
 @media (max-width: 968px) {
     .hero-content { flex-direction: column; text-align: center; }
     .hero h1 { font-size: 2.5rem; }
@@ -136,7 +166,7 @@ h1 { color: var(--dark-bg); }
     /* Hamburger Zichtbaar */
     .hamburger { display: flex; z-index: 1001; }
     
-    /* Dropdown Menu */
+    /* Dropdown Menu Stijl */
     .nav-links {
         position: absolute;
         top: 100%; /* Plakt onder de navbar */
@@ -147,9 +177,9 @@ h1 { color: var(--dark-bg); }
         align-items: center;
         gap: 0;
         border-top: 1px solid #eee;
-        max-height: 0; /* Verbergen */
+        max-height: 0; /* Standaard verborgen */
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease;
         box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     }
 
@@ -162,13 +192,15 @@ h1 { color: var(--dark-bg); }
     .nav-links a { display: block; padding: 15px; width: 100%; }
     .nav-links a:hover { background: #f0fdfa; color: var(--primary); }
     
-    /* Animeren van hamburger naar kruisje (optioneel) */
+    /* Hamburger Animatie */
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 }
 
-/* --- CHAT WIDGET --- */
+/* ==========================================================================
+   9. CHAT WIDGET
+   ========================================================================== */
 .chat-widget {
     position: fixed; bottom: 90px; right: 20px; width: 450px; height: auto;
     background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
@@ -176,18 +208,26 @@ h1 { color: var(--dark-bg); }
     border: 4px solid var(--primary-soft);
 }
 @media (max-width: 480px) { .chat-widget { width: 90%; right: 5%; bottom: 80px; } }
+
 .chat-widget.active { display: flex; animation: slideUpChat 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
 @keyframes slideUpChat { from { opacity: 0; transform: translateY(50px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
-.chat-header { background: var(--primary); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-family: var(--font-heading); font-size: 1.3rem; }
+
+.chat-header {
+    background: var(--primary); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;
+    font-weight: 700; font-family: var(--font-heading); font-size: 1.3rem;
+}
 .chat-body { height: 500px; overflow-y: auto; padding: 20px; background: #f8fafc; display: flex; flex-direction: column; gap: 15px; }
+
 .message { max-width: 85%; padding: 14px 18px; border-radius: 20px; font-size: 1rem; line-height: 1.5; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 .message.bot { background: white; color: var(--text-main); align-self: flex-start; border-bottom-left-radius: 5px; }
 .message.user { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 5px; }
+
 .chat-input { padding: 15px; border-top: 2px solid #f1f5f9; display: flex; gap: 10px; background: white; }
 .chat-input input { flex: 1; padding: 12px 20px; border: 2px solid #e2e8f0; border-radius: 30px; outline: none; font-family: var(--font-body); font-weight: 600; transition: 0.3s; }
 .chat-input input:focus { border-color: var(--primary); }
 .chat-input button { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 30px; cursor: pointer; font-weight: 700; transition: 0.3s; }
 .chat-input button:hover { background: var(--secondary); transform: scale(1.05); }
+
 .chat-toggle {
     position: fixed; bottom: 20px; right: 20px; width: 65px; height: 65px;
     background: var(--primary); color: white; border-radius: 50%; border: none; font-size: 2rem;
@@ -197,3 +237,9 @@ h1 { color: var(--dark-bg); }
 }
 .chat-toggle:hover { transform: scale(1.15) rotate(15deg); background: var(--secondary); }
 .chat-widget.active ~ .chat-toggle { display: none; }
+
+/* Footer */
+footer { background: var(--dark-bg); color: white; padding: 4rem 0; margin-top: 4rem; }
+.footer-content { display: flex; justify-content: space-between; }
+.footer-links a { color: var(--text-gray); margin-left: 20px; text-decoration: none; }
+@media (max-width: 768px) { .footer-content { flex-direction: column; gap: 2rem; text-align: center; } .footer-links a { margin: 0 10px; } }

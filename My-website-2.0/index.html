@@ -15,19 +15,11 @@
         <div class="blob blob-3"></div>
     </div>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">TravelComp<span>AI</span>nion</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#how-it-works">How it Works</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <header class="hero">
         <div class="container hero-content">
+            
             <div class="hero-text-wrapper reveal-up">
                 <h1>Discover Brabant without <span class="highlight-brush">Booking Anxiety</span>.</h1>
                 <p>Your personal AI assistant that digs deep into thousands of reviews. No tourist traps, just hidden gems.</p>
@@ -36,14 +28,13 @@
                     <a href="#destinations" class="btn btn-secondary">Explore Top Spots</a>
                 </div>
             </div>
+
             <div class="hero-image-wrapper reveal-up delay-200">
                  <img src="assets/test-image.png" alt="AI Travel" class="organic-shape">
             </div>
+
         </div>
-        <div class="custom-shape-divider-bottom">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path></svg>
-        </div>
-    </header>
+        </header>
 
     <section id="how-it-works" class="section">
         <div class="container">
@@ -77,6 +68,7 @@
                 <h2>Curated by AI, <br>Verified by Locals.</h2>
             </div>
             <div class="destinations-grid">
+                
                 <div class="card reveal-up delay-100">
                     <div class="card-image-header">
                         <span class="badge">9.8 AI Score</span>
@@ -89,6 +81,7 @@
                         <a href="terspegelt.html" class="btn-link">Read Analysis &rarr;</a>
                     </div>
                 </div>
+
                 <div class="card reveal-up delay-200">
                     <div class="card-image-header">
                         <span class="badge">9.5 AI Score</span>
@@ -101,6 +94,7 @@
                         <a href="depaal.html" class="btn-link">Read Analysis &rarr;</a>
                     </div>
                 </div>
+
                 <div class="card reveal-up delay-300">
                     <div class="card-image-header">
                         <span class="badge">9.2 AI Score</span>
@@ -113,46 +107,13 @@
                         <a href="efteling.html" class="btn-link">Read Analysis &rarr;</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3>TravelCompAInion</h3>
-                <p>Your local AI friend in Brabant.</p>
-            </div>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </footer>
-
-    <div class="chat-widget" id="chat-widget">
-        <div class="chat-header">
-            <span>Brabant Insider AI</span>
-            <button id="close-chat" style="background:none; border:none; color:white; font-size:1.2rem; cursor:pointer;">&times;</button>
-        </div>
-        <div class="chat-body" id="chat-body">
-            <div class="message bot">Hi! I'm your Travel Companion. Ask me anything!</div>
-        </div>
-        <div class="chat-input">
-            <input type="text" placeholder="Type your question..." id="user-input">
-            <button id="send-btn">Send</button>
-        </div>
-    </div>
-    <button class="chat-toggle" id="chat-toggle">💬</button>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
-            });
-            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
-        });
-    </script>
 </body>
 </html>
