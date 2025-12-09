@@ -18,6 +18,15 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+    /* ==========================================================================
+   0B. GOOGLE SITE VERIFICATION (Automatische Injectie)
+   ========================================================================== */
+(function() {
+    const meta = document.createElement('meta');
+    meta.name = "google-site-verification";
+    meta.content = "FB85txyqKLPrPDnRmIVpJXcJ6pOLEfAiqgO13RSW2MQ";
+    document.head.appendChild(meta);
+})();
 
     /* ==========================================================================
        1. SITE BUILDER (Injecteert Header, Footer & Chatbot)
