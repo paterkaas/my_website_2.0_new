@@ -153,12 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
         div.classList.add('message', sender);
         if(id) div.id = id;
         
-        // Maak linkjes klikbaar
+    // --- NIEUWE CODE: MAAK ER EEN KNOP VAN ---
         const urlRegex = /(https?:\/\/[^\s]+)/g;
         const htmlContent = text.replace(urlRegex, function(url) {
-            return `<a href="${url}" target="_blank" style="color: inherit; text-decoration: underline;">${url}</a>`;
+            // We vervangen de lange link door een mooie knop
+            return `<br><a href="${url}" target="_blank" class="chat-button">View offer ↗</a><br>`;
         });
-        
         div.innerHTML = htmlContent;
         chatBody.appendChild(div);
         chatBody.scrollTop = chatBody.scrollHeight; // Scroll naar beneden
