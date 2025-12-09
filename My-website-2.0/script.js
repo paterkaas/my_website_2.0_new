@@ -1,3 +1,22 @@
+/* ==========================================================================
+   0. GOOGLE ANALYTICS (Automatische Injectie)
+   ========================================================================== */
+(function() {
+    const gaMeasurementId = 'G-ECRD9C1T9X'; // Jouw ID
+
+    // 1. Laad het Google Script bestand
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
+    document.head.appendChild(script);
+
+    // 2. Start de meting
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaMeasurementId);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================================================
@@ -66,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navPlaceholder) navPlaceholder.innerHTML = navbarHTML;
     if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
     
-    // Voeg chat altijd toe aan het einde van de body
     document.body.insertAdjacentHTML('beforeend', chatHTML);
 
 
@@ -84,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('active');
         });
 
-        // Sluit menu als je op een link klikt
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -100,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.classList.add('active');
             }
         });
-    }, { threshold: 0.1 }); // Activeer als 10% in beeld is
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
 
@@ -118,20 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
     const chatBody = document.getElementById('chat-body');
 
-    // Functie: Open/Sluit Chat
     function toggleChat() {
         chatWidget.classList.toggle('active');
-        // Focus op input als chat opent
         if (chatWidget.classList.contains('active') && userInput) {
             userInput.focus();
         }
     }
 
-    // Event Listeners voor openen/sluiten
     if(chatToggle) chatToggle.addEventListener('click', toggleChat);
     if(closeChat) closeChat.addEventListener('click', toggleChat);
     
-    // Knoppen op de pagina die de chat openen
     if(startChatBtn) {
         startChatBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -145,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Functie: Bericht toevoegen aan scherm
     function addMessage(text, sender, id = null) {
         if (!chatBody) return;
         
@@ -153,33 +165,29 @@ document.addEventListener('DOMContentLoaded', () => {
         div.classList.add('message', sender);
         if(id) div.id = id;
         
-    // --- NIEUWE CODE: MAAK ER EEN KNOP VAN ---
+        // Links omzetten naar knoppen
         const urlRegex = /(https?:\/\/[^\s]+)/g;
         const htmlContent = text.replace(urlRegex, function(url) {
-            // We vervangen de lange link door een mooie knop
-            return `<br><a href="${url}" target="_blank" class="chat-button">View offer ↗</a><br>`;
+            return `<br><a href="${url}" target="_blank" class="chat-button">Bekijk Deal ↗</a><br>`;
         });
+        
         div.innerHTML = htmlContent;
         chatBody.appendChild(div);
-        chatBody.scrollTop = chatBody.scrollHeight; // Scroll naar beneden
+        chatBody.scrollTop = chatBody.scrollHeight;
     }
 
-    // Functie: Bericht versturen naar API
     async function handleUserMessage() {
         if (!userInput) return;
         const text = userInput.value.trim();
         if (text === "") return;
 
-        // 1. Toon bericht van gebruiker
         addMessage(text, 'user');
         userInput.value = '';
 
-        // 2. Toon "Thinking..." status
         const loadingId = 'loading-' + Date.now();
         addMessage("Thinking...", 'bot', loadingId);
 
         try {
-            // 3. Stuur naar Vercel API
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -188,26 +196,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             
-            // Verwijder "Thinking..."
             const loadingMsg = document.getElementById(loadingId);
             if (loadingMsg) loadingMsg.remove();
 
-            // 4. Toon antwoord
             if (data.reply) {
                 addMessage(data.reply, 'bot');
             } else {
-                addMessage("I'm having trouble connecting right now. Please try again later.", 'bot');
+                addMessage("I'm having trouble connecting right now.", 'bot');
             }
 
         } catch (error) {
             console.error('Chat error:', error);
             const loadingMsg = document.getElementById(loadingId);
             if (loadingMsg) loadingMsg.remove();
-            addMessage("Oops, something went wrong. Please check your internet connection.", 'bot');
+            addMessage("Oops, something went wrong.", 'bot');
         }
     }
 
-    // Verstuur bij Klik of Enter
     if(sendBtn) sendBtn.addEventListener('click', handleUserMessage);
     if(userInput) userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleUserMessage();
