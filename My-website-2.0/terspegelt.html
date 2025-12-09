@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI Analysis of Recreation Park Terspegelt">
     <title>Terspegelt Review | TravelCompAInion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
     <nav class="navbar">
         <div class="container">
@@ -16,7 +22,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#destinations">Destinations</a></li>
-                <li><a href="index.html#how-it-works">How it Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -26,15 +32,23 @@
         </div>
     </nav>
 
-    <header class="page-hero">
-        <div class="container">
-            <h1>Recreatiepark Terspegelt</h1>
-            <div class="location-sub">
+    <header class="page-hero" style="padding-top: 150px; padding-bottom: 100px; text-align: center; position: relative;">
+        <div class="container reveal-up">
+            <h1 style="color: var(--dark-bg); font-size: 3.5rem;">Recreatiepark Terspegelt</h1>
+            <div class="location-sub" style="color: var(--text-gray); font-size: 1.2rem; margin-top: 10px;">
                 <span>📍 Eersel, North Brabant</span>
-                <span>•</span>
+                <span style="margin: 0 10px;">•</span>
                 <span>⭐⭐⭐⭐⭐ 5-Star Park</span>
             </div>
-            <div class="score-badge-large">9.8 AI Score</div>
+            <div class="score-badge-large" style="background: var(--primary); color: white; padding: 10px 25px; border-radius: 50px; display: inline-block; margin-top: 20px; font-weight: bold; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);">
+                9.8 AI Score
+            </div>
+        </div>
+
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
     </header>
 
@@ -43,71 +57,62 @@
             
             <div class="detail-grid">
                 
-                <div class="detail-image-container">
-                    <img src="assets/terspegelt-image.jpg" alt="Terspegelt View" class="detail-img">
-                    <a href="https://www.booking.com/hotel/nl/recreatiepark-terspegelt" target="_blank" class="btn-affiliate">
-        Check Availability & Prices ↗
-        <a>
-        </a>
+                <div class="detail-image-container reveal-up delay-100" style="text-align: center;">
+                    <img src="assets/terspegelt-image.jpg" alt="Terspegelt View" class="detail-img organic-shape" style="width: 100%; height: 350px; object-fit: cover;">
+                    
+                    <a href="https://www.booking.com/hotel/nl/recreatiepark-terspegelt" target="_blank" class="btn btn-affiliate" style="width: 100%; margin-top: 20px; background: #f59e0b; color: white; display: block; text-align: center; padding: 15px; border-radius: 15px; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);">
+                        Check Availability & Prices ↗
+                    </a>
                 </div>
 
-                <div class="info-box">
+                <div class="info-box glass-card reveal-up delay-200">
                     <h2>AI Summary</h2>
                     <p>Recreatiepark Terspegelt is widely considered one of the best family parks in the Netherlands. Our AI analysis of over 2,500 reviews confirms this reputation, especially for families with teenagers and young children.</p>
                     
-                    <ul class="info-specs">
-                        <li>🏊 <strong>Swimming:</strong> Indoor 'Sterrenstrand' & Lake</li>
-                        <li>🏠 <strong>Accommodations:</strong> Glamping, Lodges, Camping</li>
-                        <li>🍕 <strong>Dining:</strong> Multiple high-quality restaurants</li>
-                        <li>🐶 <strong>Pets:</strong> Allowed (in specific zones)</li>
+                    <ul class="info-specs" style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🏊 <strong>Swimming:</strong> Indoor 'Sterrenstrand' & Lake</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🏠 <strong>Accommodations:</strong> Glamping, Lodges, Camping</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🍕 <strong>Dining:</strong> Multiple high-quality restaurants</li>
+                        <li style="padding: 10px 0;">🐶 <strong>Pets:</strong> Allowed (in specific zones)</li>
                     </ul>
 
-                    <button id="detail-chat-btn" class="btn btn-primary" style="width: 100%;">Ask AI for details</button>
+                    <button id="detail-chat-btn" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Ask AI for details</button>
                 </div>
             </div>
 
-            <div class="analysis-grid">
+            <div class="analysis-grid" style="margin-top: 60px;">
                 
-                <div class="analysis-card pros">
+                <div class="analysis-card glass-card reveal-up delay-100" style="border-top: 4px solid #10b981;">
                     <h3>✅ What People Love</h3>
                     <ul class="check-list">
-                        <li><strong>The "Sterrenstrand":</strong> A unique indoor sand and water playground that is a hit in any weather.</li>
-                        <li><strong>Activities for Teens:</strong> Unlike many parks, Terspegelt offers "The Blob", Pumptrack, and chill zones specifically for ages 12+.</li>
-                        <li><strong>Cleanliness:</strong> Sanitary facilities score exceptionally high (9.4/10) in recent reviews.</li>
-                        <li><strong>High-End Glamping:</strong> The lounge lodges right on the water are highly recommended.</li>
+                        <li><strong>The "Sterrenstrand":</strong> A unique indoor sand and water playground.</li>
+                        <li><strong>Activities for Teens:</strong> The Blob, Pumptrack, and chill zones.</li>
+                        <li><strong>Cleanliness:</strong> Sanitary facilities score exceptionally high (9.4/10).</li>
                     </ul>
                 </div>
 
-                <div class="analysis-card cons">
+                <div class="analysis-card glass-card reveal-up delay-200" style="border-top: 4px solid #f59e0b;">
                     <h3>⚠️ Things to Consider</h3>
                     <ul class="check-list warning">
-                        <li><strong>Pricey:</strong> It is in the top price segment. You pay for the 5-star quality.</li>
-                        <li><strong>Busy:</strong> In July/August, the park is fully booked. The pool can get crowded.</li>
-                        <li><strong>Strict Rules:</strong> Some guests mention strict enforcement of quiet hours (which others love).</li>
+                        <li><strong>Pricey:</strong> Top price segment.</li>
+                        <li><strong>Busy:</strong> Fully booked in summer.</li>
+                        <li><strong>Strict Rules:</strong> Quiet hours are enforced.</li>
                     </ul>
                 </div>
 
-                <div class="analysis-card">
+                <div class="analysis-card glass-card reveal-up delay-300">
                     <h3>📊 AI Rating Breakdown</h3>
-                    
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Hygiene</span> <span>9.4</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 94%;"></div></div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Hygiene</span> <span>9.4</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:94%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
-
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Location & Atmosphere</span> <span>9.6</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 96%;"></div></div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Atmosphere</span> <span>9.6</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:96%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
-
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Child Friendliness</span> <span>9.9</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 99%;"></div></div>
-                    </div>
-
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Price / Quality</span> <span>8.5</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Child Friendliness</span> <span>9.9</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:99%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
                 </div>
 
@@ -123,12 +128,9 @@
                 <p>Your local AI friend in Brabant.</p>
             </div>
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact</a>
             </div>
-        </div>
-        <div class="copyright">
-            &copy; 2025 TravelCompAInion. All rights reserved.
         </div>
     </footer>
 
@@ -147,20 +149,24 @@
             <button id="send-btn">Send</button>
         </div>
     </div>
-
     <button class="chat-toggle" id="chat-toggle">💬</button>
 
     <script src="script.js"></script>
-    
     <script>
+        // Scroll Reveal & Chat Trigger
         document.addEventListener('DOMContentLoaded', () => {
-            const detailChatBtn = document.getElementById('detail-chat-btn');
-            const chatWidget = document.getElementById('chat-widget');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
             
-            if(detailChatBtn) {
-                detailChatBtn.addEventListener('click', () => {
-                    chatWidget.classList.add('active');
-                    document.getElementById('user-input').focus();
+            // Detail knop opent chat
+            const detailBtn = document.getElementById('detail-chat-btn');
+            if(detailBtn) {
+                detailBtn.addEventListener('click', () => {
+                    document.getElementById('chat-widget').classList.add('active');
                 });
             }
         });

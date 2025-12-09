@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Privacy Policy of TravelCompAInion">
     <title>Privacy Policy | TravelCompAInion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
     <nav class="navbar">
         <div class="container">
@@ -26,44 +31,38 @@
         </div>
     </nav>
 
-    <header class="page-hero">
-        <div class="container">
-            <h1>Privacy Policy</h1>
-            <div class="location-sub">
-                <span>Transparency & Trust</span>
-            </div>
+    <header class="page-hero" style="padding-top: 150px; padding-bottom: 50px; text-align: center;">
+        <div class="container reveal-up">
+            <h1 style="color: var(--dark-bg); font-size: 3rem;">Privacy Policy</h1>
+            <p style="color: var(--text-gray); font-size: 1.2rem;">Transparency & Trust</p>
         </div>
     </header>
 
-    <section class="section">
+    <section class="section" style="padding-top: 20px;">
         <div class="container">
-            <div class="info-box" style="max-width: 800px; margin: 0 auto;">
-                <h2>How we handle your data</h2>
+            <div class="glass-card reveal-up delay-100" style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">How we handle your data</h2>
                 <p>At TravelCompAInion, we take your privacy seriously. Since we use AI and affiliate partners, we want to be transparent about what data we collect and how we use it.</p>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">1. General</h3>
+                <h3 style="margin-top: 2.5rem; margin-bottom: 0.8rem; font-size: 1.5rem;">1. General</h3>
                 <p>TravelCompAInion is a free-to-use travel guide. We do not ask for personal account details or registration to use the website.</p>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">2. AI Usage (Google Gemini)</h3>
+                <h3 style="margin-top: 2.5rem; margin-bottom: 0.8rem; font-size: 1.5rem;">2. AI Usage (Google Gemini)</h3>
                 <p>When you use our chat feature ("Brabant Insider AI"), your message is sent to the Google Gemini API to generate a response.</p>
-                <ul class="check-list">
+                <ul class="check-list" style="margin-top: 10px;">
                     <li>Do not share sensitive personal information (such as last names, addresses, or payment details) in the chat.</li>
-                    <li>The content of the conversations is not permanently stored by us, but is processed by Google to generate the answers.</li>
+                    <li>The content of the conversations is processed by Google to generate answers but not permanently stored by us.</li>
                 </ul>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">3. Affiliate Links</h3>
-                <p>Our website contains links to partners such as Booking.com. These are so-called 'affiliate links'.</p>
-                <ul class="check-list">
+                <h3 style="margin-top: 2.5rem; margin-bottom: 0.8rem; font-size: 1.5rem;">3. Affiliate Links</h3>
+                <p>Our website contains links to partners such as Booking.com.</p>
+                <ul class="check-list" style="margin-top: 10px;">
                     <li>If you click through our link and make a booking, we may receive a small commission.</li>
                     <li>This costs you nothing extra, but helps us keep the website running.</li>
-                    <li>Booking sites have their own privacy policies over which we have no control.</li>
                 </ul>
 
-                <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">4. Cookies</h3>
-                <p>We use functional cookies to ensure the website works properly (for example, to remember if you have opened the chat). We do not use tracking cookies for advertising purposes.</p>
-
-                <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">5. Contact</h3>
-                <p>Do you have questions about this policy? Please contact us via the <a href="contact.html" style="color: var(--primary);">contact page</a>.</p>
+                <h3 style="margin-top: 2.5rem; margin-bottom: 0.8rem; font-size: 1.5rem;">4. Contact</h3>
+                <p>Do you have questions regarding this policy? Please contact us via the <a href="contact.html" style="color: var(--primary); font-weight: bold;">contact page</a>.</p>
             </div>
         </div>
     </section>
@@ -79,4 +78,33 @@
                 <a href="contact.html">Contact</a>
             </div>
         </div>
-        <div class="copyright">
+    </footer>
+
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <span>Brabant Insider AI</span>
+            <button id="close-chat" style="background:none; border:none; color:white; font-size:1.2rem; cursor:pointer;">&times;</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">
+                Hi! Do you have questions about privacy or travel?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your question..." id="user-input">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <button class="chat-toggle" id="chat-toggle">💬</button>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+            });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI Analysis of Efteling Hotel">
     <title>Efteling Hotel Review | TravelCompAInion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
     <nav class="navbar">
         <div class="container">
@@ -16,7 +22,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#destinations">Destinations</a></li>
-                <li><a href="index.html#how-it-works">How it Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -26,15 +32,23 @@
         </div>
     </nav>
 
-    <header class="page-hero">
-        <div class="container">
-            <h1>Efteling Hotel</h1>
-            <div class="location-sub">
+    <header class="page-hero" style="padding-top: 150px; padding-bottom: 100px; text-align: center; position: relative;">
+        <div class="container reveal-up">
+            <h1 style="color: var(--dark-bg); font-size: 3.5rem;">Efteling Hotel</h1>
+            <div class="location-sub" style="color: var(--text-gray); font-size: 1.2rem; margin-top: 10px;">
                 <span>📍 Kaatsheuvel, North Brabant</span>
-                <span>•</span>
+                <span style="margin: 0 10px;">•</span>
                 <span>⭐⭐⭐⭐ Official Fairytale Hotel</span>
             </div>
-            <div class="score-badge-large">9.2 AI Score</div>
+            <div class="score-badge-large" style="background: var(--primary); color: white; padding: 10px 25px; border-radius: 50px; display: inline-block; margin-top: 20px; font-weight: bold; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);">
+                9.2 AI Score
+            </div>
+        </div>
+
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
     </header>
 
@@ -43,71 +57,65 @@
             
             <div class="detail-grid">
                 
-                <div class="detail-image-container">
-                    <img src="assets/efteling-image.jpg" alt="Efteling Hotel" class="detail-img">
+                <div class="detail-image-container reveal-up delay-100" style="text-align: center;">
+                    <img src="assets/efteling-image.jpg" alt="Efteling Hotel" class="detail-img organic-shape" style="width: 100%; height: 350px; object-fit: cover;">
                     
-                    <a href="affiliate link" target="_blank" class="btn-affiliate">
+                    <a href="#" target="_blank" class="btn btn-affiliate" style="width: 100%; margin-top: 20px; background: #f59e0b; color: white; display: block; text-align: center; padding: 15px; border-radius: 15px; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);">
                         Check Availability & Prices ↗
                     </a>
                 </div>
 
-                <div class="info-box">
+                <div class="info-box glass-card reveal-up delay-200">
                     <h2>AI Summary</h2>
-                    <p>Sleeping at the Efteling Hotel is strictly about the magic. Our AI analysis shows that guests primarily book this for the unique <strong>Early Access</strong> to the park and the fairytale themed rooms. It is not the most modern hotel, but the location is unbeatable.</p>
+                    <p>Sleeping at the Efteling Hotel is strictly about the magic. Our AI analysis shows that guests primarily book this for the unique <strong>Early Access</strong> to the park. It is not the most modern hotel, but the location is unbeatable.</p>
                     
-                    <ul class="info-specs">
-                        <li>🎢 <strong>Early Access:</strong> Enter the park 30 min before opening</li>
-                        <li>🏰 <strong>Rooms:</strong> Standard rooms & 20+ Themed Suites</li>
-                        <li>🍳 <strong>Breakfast:</strong> Character breakfast included</li>
-                        <li>🅿️ <strong>Parking:</strong> Free parking included</li>
+                    <ul class="info-specs" style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🎢 <strong>Early Access:</strong> Enter the park 30 min before opening</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🏰 <strong>Rooms:</strong> Standard rooms & 20+ Themed Suites</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🍳 <strong>Breakfast:</strong> Character breakfast included</li>
+                        <li style="padding: 10px 0;">🅿️ <strong>Parking:</strong> Free parking included</li>
                     </ul>
 
-                    <button id="detail-chat-btn" class="btn btn-primary" style="width: 100%;">Ask AI for details</button>
+                    <button id="detail-chat-btn" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Ask AI for details</button>
                 </div>
             </div>
 
-            <div class="analysis-grid">
+            <div class="analysis-grid" style="margin-top: 60px;">
                 
-                <div class="analysis-card pros">
+                <div class="analysis-card glass-card reveal-up delay-100" style="border-top: 4px solid #10b981;">
                     <h3>✅ What People Love</h3>
                     <ul class="check-list">
-                        <li><strong>Location:</strong> You are literally 5 minutes walking distance from the main entrance.</li>
-                        <li><strong>Early Access:</strong> Being able to run to "Baron 1898" or "Vliegende Hollander" before the crowds is a huge plus.</li>
-                        <li><strong>For Kids:</strong> Meeting Pardoes (the mascot) at breakfast is a highlight for young children.</li>
-                        <li><strong>Theming:</strong> Even the elevators and corridors are full of Efteling music and details.</li>
+                        <li><strong>Location:</strong> Literally 5 minutes walk from the main entrance.</li>
+                        <li><strong>Early Access:</strong> Running to "Baron 1898" before the crowds is a huge plus.</li>
+                        <li><strong>For Kids:</strong> Meeting Pardoes at breakfast is a highlight.</li>
                     </ul>
                 </div>
 
-                <div class="analysis-card cons">
+                <div class="analysis-card glass-card reveal-up delay-200" style="border-top: 4px solid #f59e0b;">
                     <h3>⚠️ Things to Consider</h3>
                     <ul class="check-list warning">
-                        <li><strong>Price:</strong> It is significantly more expensive than hotels in the surrounding area.</li>
-                        <li><strong>Dated:</strong> Reviews frequently mention that standard rooms feel a bit 90s/dated compared to modern standards.</li>
-                        <li><strong>Noise:</strong> It's a family hotel. Breakfast can be chaotic and loud.</li>
+                        <li><strong>Price:</strong> Significantly more expensive than surrounding hotels.</li>
+                        <li><strong>Dated:</strong> Standard rooms can feel a bit 90s compared to modern standards.</li>
+                        <li><strong>Noise:</strong> Breakfast can be chaotic and loud.</li>
                     </ul>
                 </div>
 
-                <div class="analysis-card">
+                <div class="analysis-card glass-card reveal-up delay-300">
                     <h3>📊 AI Rating Breakdown</h3>
                     
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Location</span> <span>10.0</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%;"></div></div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Location</span> <span>10.0</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:100%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
 
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Fairytale Atmosphere</span> <span>9.8</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 98%;"></div></div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Fairytale Atmosphere</span> <span>9.8</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:98%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
 
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Room Comfort</span> <span>8.0</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
-                    </div>
-
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Price / Quality</span> <span>7.8</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 78%;"></div></div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Price / Quality</span> <span>7.8</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:78%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
                 </div>
 
@@ -123,12 +131,9 @@
                 <p>Your local AI friend in Brabant.</p>
             </div>
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact</a>
             </div>
-        </div>
-        <div class="copyright">
-            &copy; 2025 TravelCompAInion. All rights reserved.
         </div>
     </footer>
 
@@ -147,22 +152,18 @@
             <button id="send-btn">Send</button>
         </div>
     </div>
-
     <button class="chat-toggle" id="chat-toggle">💬</button>
 
     <script src="script.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const detailChatBtn = document.getElementById('detail-chat-btn');
-            const chatWidget = document.getElementById('chat-widget');
+            const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+            });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
             
-            if(detailChatBtn) {
-                detailChatBtn.addEventListener('click', () => {
-                    chatWidget.classList.add('active');
-                    document.getElementById('user-input').focus();
-                });
-            }
+            const detailBtn = document.getElementById('detail-chat-btn');
+            if(detailBtn) detailBtn.addEventListener('click', () => { document.getElementById('chat-widget').classList.add('active'); });
         });
     </script>
 </body>

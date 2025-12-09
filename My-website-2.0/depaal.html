@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI Analysis of Camping de Paal">
     <title>Camping de Paal Review | TravelCompAInion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
     <nav class="navbar">
         <div class="container">
@@ -16,7 +22,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#destinations">Destinations</a></li>
-                <li><a href="index.html#how-it-works">How it Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -26,15 +32,23 @@
         </div>
     </nav>
 
-    <header class="page-hero">
-        <div class="container">
-            <h1>Camping de Paal</h1>
-            <div class="location-sub">
+    <header class="page-hero" style="padding-top: 150px; padding-bottom: 100px; text-align: center; position: relative;">
+        <div class="container reveal-up">
+            <h1 style="color: var(--dark-bg); font-size: 3.5rem;">Camping de Paal</h1>
+            <div class="location-sub" style="color: var(--text-gray); font-size: 1.2rem; margin-top: 10px;">
                 <span>📍 Bergeijk, North Brabant</span>
-                <span>•</span>
-                <span>⭐⭐⭐⭐⭐ Best Kids Campsite 2024</span>
+                <span style="margin: 0 10px;">•</span>
+                <span>⭐⭐⭐⭐⭐ Best Kids Campsite</span>
             </div>
-            <div class="score-badge-large">9.5 AI Score</div>
+            <div class="score-badge-large" style="background: var(--primary); color: white; padding: 10px 25px; border-radius: 50px; display: inline-block; margin-top: 20px; font-weight: bold; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);">
+                9.5 AI Score
+            </div>
+        </div>
+
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
     </header>
 
@@ -43,71 +57,65 @@
             
             <div class="detail-grid">
                 
-                <div class="detail-image-container">
-                    <img src="assets/depaal-image.jpg" alt="Camping de Paal" class="detail-img">
+                <div class="detail-image-container reveal-up delay-100" style="text-align: center;">
+                    <img src="assets/depaal-image.jpg" alt="Camping de Paal" class="detail-img organic-shape" style="width: 100%; height: 350px; object-fit: cover;">
                     
-                    <a href="https://www.booking.com" target="_blank" class="btn-affiliate">
+                    <a href="https://www.booking.com" target="_blank" class="btn btn-affiliate" style="width: 100%; margin-top: 20px; background: #f59e0b; color: white; display: block; text-align: center; padding: 15px; border-radius: 15px; font-weight: bold; text-decoration: none; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);">
                         Check Availability & Prices ↗
                     </a>
                 </div>
 
-                <div class="info-box">
+                <div class="info-box glass-card reveal-up delay-200">
                     <h2>AI Summary</h2>
-                    <p>Camping de Paal is legendary in Europe for families with children up to 11 years old. Our AI analysis highlights the incredible animation team and the unique 'Biebelebontse Paalbergen'. It’s a paradise for kids, but expect a lively and energetic atmosphere.</p>
+                    <p>Camping de Paal is legendary in Europe for families with children up to 11 years old. Our AI analysis highlights the incredible animation team and the unique 'Biebelebontse Paalbergen'. It’s a paradise for kids.</p>
                     
-                    <ul class="info-specs">
-                        <li>🌊 <strong>Swimming:</strong> Subtropical paradise & outdoor lagoon</li>
-                        <li>🎭 <strong>Animation:</strong> Professional musicals & theatre</li>
-                        <li>🏖️ <strong>Play:</strong> Huge sand & water playground</li>
-                        <li>🏕️ <strong>Stay:</strong> Glamping tents, Cabins, Camping pitches</li>
+                    <ul class="info-specs" style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🌊 <strong>Swimming:</strong> Subtropical paradise & lagoon</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🎭 <strong>Animation:</strong> Professional musicals & theatre</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🏖️ <strong>Play:</strong> Huge indoor sand playground</li>
+                        <li style="padding: 10px 0;">🏕️ <strong>Stay:</strong> Glamping tents, Cabins, Pitches</li>
                     </ul>
 
-                    <button id="detail-chat-btn" class="btn btn-primary" style="width: 100%;">Ask AI for details</button>
+                    <button id="detail-chat-btn" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Ask AI for details</button>
                 </div>
             </div>
 
-            <div class="analysis-grid">
+            <div class="analysis-grid" style="margin-top: 60px;">
                 
-                <div class="analysis-card pros">
+                <div class="analysis-card glass-card reveal-up delay-100" style="border-top: 4px solid #10b981;">
                     <h3>✅ What People Love</h3>
                     <ul class="check-list">
-                        <li><strong>The Animation:</strong> Often cited as the best in the Netherlands. "Viva de Clown" is a local hero.</li>
-                        <li><strong>Biebelebontse Paalbergen:</strong> A gigantic indoor sand and water playground. Parents can relax while kids play safely.</li>
-                        <li><strong>Sanitary Facilities:</strong> Themed children's bathrooms make showering fun (and they are kept very clean).</li>
-                        <li><strong>Car-Free:</strong> Most fields are car-free, making it safe for toddlers to roam.</li>
+                        <li><strong>The Animation:</strong> Often cited as the best in the Netherlands. "Viva de Clown" is a hero.</li>
+                        <li><strong>Biebelebontse Paalbergen:</strong> Gigantic indoor sand playground.</li>
+                        <li><strong>Sanitary Facilities:</strong> Themed children's bathrooms make showering fun.</li>
                     </ul>
                 </div>
 
-                <div class="analysis-card cons">
+                <div class="analysis-card glass-card reveal-up delay-200" style="border-top: 4px solid #f59e0b;">
                     <h3>⚠️ Things to Consider</h3>
                     <ul class="check-list warning">
-                        <li><strong>Not for Teens:</strong> If your children are 12+, they might find the entertainment too childish.</li>
-                        <li><strong>Noise Level:</strong> It is a true children's campsite. Expect happy screaming and activity from 8:00 AM.</li>
-                        <li><strong>Pitch Surface:</strong> Some camping pitches are on sand (forest soil), which can be dusty in dry summers.</li>
+                        <li><strong>Not for Teens:</strong> If your kids are 12+, they might find it too childish.</li>
+                        <li><strong>Noise Level:</strong> Expect happy screaming from 8:00 AM.</li>
+                        <li><strong>Pitch Surface:</strong> Forest soil can be dusty in dry summers.</li>
                     </ul>
                 </div>
 
-                <div class="analysis-card">
+                <div class="analysis-card glass-card reveal-up delay-300">
                     <h3>📊 AI Rating Breakdown</h3>
                     
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Child Friendliness (0-11)</span> <span>9.9</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 99%;"></div></div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Child Friendliness (0-11)</span> <span>9.9</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:99%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
 
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Hygiene</span> <span>9.2</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 92%;"></div></div>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Hygiene</span> <span>9.2</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:92%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
 
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Swimming Pool</span> <span>9.5</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%;"></div></div>
-                    </div>
-
-                    <div class="rating-row">
-                        <div class="rating-label"><span>Price / Quality</span> <span>8.8</span></div>
-                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 88%;"></div></div>
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Swimming Pool</span> <span>9.5</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:95%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
                     </div>
                 </div>
 
@@ -123,12 +131,9 @@
                 <p>Your local AI friend in Brabant.</p>
             </div>
             <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact</a>
             </div>
-        </div>
-        <div class="copyright">
-            &copy; 2025 TravelCompAInion. All rights reserved.
         </div>
     </footer>
 
@@ -147,22 +152,18 @@
             <button id="send-btn">Send</button>
         </div>
     </div>
-
     <button class="chat-toggle" id="chat-toggle">💬</button>
 
     <script src="script.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const detailChatBtn = document.getElementById('detail-chat-btn');
-            const chatWidget = document.getElementById('chat-widget');
+            const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+            });
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
             
-            if(detailChatBtn) {
-                detailChatBtn.addEventListener('click', () => {
-                    chatWidget.classList.add('active');
-                    document.getElementById('user-input').focus();
-                });
-            }
+            const detailBtn = document.getElementById('detail-chat-btn');
+            if(detailBtn) detailBtn.addEventListener('click', () => { document.getElementById('chat-widget').classList.add('active'); });
         });
     </script>
 </body>
