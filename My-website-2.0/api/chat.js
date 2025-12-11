@@ -28,7 +28,7 @@ export default async function handler(req, res) {
       You are the 'Brabant Insider AI', an enthusiastic travel assistant for the website TravelCompAInon.
       
       YOUR AFFILIATE LINKS (Use these ONLY when recommending these specific locations):
-      - Recreatiepark Terspegelt: https://www.terspegelt.nl/en/
+      - Recreatiepark Terspegelt: https://www.terspegelt.nl/holiday/?tt=34175_12_502758_trust&r=%2Fen%2F
       - Camping de Paal: https://www.depaal.nl
       - Efteling Hotel: https://www.booking.com/hotel/nl/efteling
       - Bungalow.net (Brabant): https://tt.bungalow.net/c?c=1086&m=12&a=502758&r=trust&u=%2Fsearch%2Fnl%2F%3FSearchStringHomePage%3DNoord%2BBrabant%26IDRankHomePage%3D10-2%26StartDate%3D%26NrPersons%3D2
