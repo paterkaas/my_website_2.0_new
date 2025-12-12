@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Links omzetten naar knoppen
         const urlRegex = /(https?:\/\/[^\s]+)/g;
         const htmlContent = text.replace(urlRegex, function(url) {
-            return `<br><a href="${url}" target="_blank" class="chat-button">Bekijk Deal ↗</a><br>`;
+            return `<br><a href="${url}" target="_blank" class="chat-button">Claim Your Deal ↗</a><br>`;
         });
         
         div.innerHTML = htmlContent;
