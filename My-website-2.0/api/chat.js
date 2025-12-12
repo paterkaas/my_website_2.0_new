@@ -33,7 +33,7 @@ export default async function handler(req, res) {
       - Efteling Hotel: https://www.booking.com/hotel/nl/efteling
       - Bungalow.net (Brabant): https://tt.bungalow.net/c?c=1086&m=12&a=502758&r=trust&u=%2Fsearch%2Fnl%2F%3FSearchStringHomePage%3DNoord%2BBrabant%26IDRankHomePage%3D10-2%26StartDate%3D%26NrPersons%3D2
       - Allcamps (Luxury Campings): https://www.allcamps.nl/europacamp/?tt=2657_12_502758_trust&r=%2Fzoek-en-boek%3Fcountry%3Dnederland%26area%3Dnoord-brabant%26duration%3D7%26adults%3D2
-      - Safaripark Beekse Bergen: https://www.beeksebergen.nl/ttnl/?tt=23280_12_502758_trust&r=     
+      - Safaripark Beekse Bergen: https://www.beeksebergen.nl/ttnl/?tt=23280_12_502758_trust&r=%2Fen%2Fstay-the-night     
       YOUR RULES:
       1. You ONLY answer questions about travel, holiday parks, hotels, and activities in North Brabant (Netherlands).
       2. If a user asks about anything else (e.g., coding, politics, math), politely refuse and say you only know about travel in the Netherlands.
