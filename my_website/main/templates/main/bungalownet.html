@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Analysis of Bungalow.net Brabant">
+    <title>Bungalow.net Brabant | TravelCompAInion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div id="nav-placeholder"></div>
+
+    <header class="page-hero" style="padding-top: 150px; padding-bottom: 80px; text-align: center;">
+        <div class="container reveal-up">
+            <h1 style="color: var(--dark-bg); font-size: 3.5rem;">Bungalow.net (Brabant)</h1>
+            <div class="location-sub" style="color: var(--text-gray); font-size: 1.2rem; margin-top: 10px;">
+                <span>📍 Various Locations, North Brabant</span>
+                <span style="margin: 0 10px;">•</span>
+                <span>🏡 The Hidden Gems Collector</span>
+            </div>
+            <div class="score-badge-large" style="background: var(--primary); color: white; padding: 10px 25px; border-radius: 50px; display: inline-block; margin-top: 20px; font-weight: bold; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);">
+                9.0 AI Score
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="detail-grid">
+                
+                <div class="detail-image-container reveal-up delay-100" style="text-align: center;">
+                    <img src="{% static 'main/assets/bungalownet-image.jpg' %}" alt="Brabant Bungalow" class="detail-img organic-shape" style="width: 100%; height: 350px; object-fit: cover;">
+                    
+                    <a href="https://tt.bungalow.net/c?c=1086&m=12&a=502758&r=trust&u=%2Fsearch%2Fnl%2F%3FSearchStringHomePage%3DNoord%2BBrabant%26IDRankHomePage%3D10-2%26StartDate%3D%26NrPersons%3D2" target="_blank" rel="sponsored nofollow" class="btn btn-affiliate" style="width: 100%; margin-top: 20px; display: block; text-align: center;">
+                        View All Brabant Deals ↗
+                    </a>
+                </div>
+
+                <div class="info-box glass-card reveal-up delay-200">
+                    <h2>AI Summary</h2>
+                    <p>Unlike a single park, Bungalow.net is a treasure trove for finding individual holiday homes scattered across Brabant. Our AI suggests this is the best choice for travelers who want to avoid mass tourism and prefer a private cottage in the woods or a unique villa.</p>
+                    
+                    <ul class="info-specs" style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🌲 <strong>Type:</strong> Individual Cottages & Small Parks</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">💰 <strong>Price:</strong> Wide range (Budget to Luxury)</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">🔑 <strong>Privacy:</strong> High (often detached houses)</li>
+                        <li style="padding: 10px 0;">🐕 <strong>Pets:</strong> Many pet-friendly options</li>
+                    </ul>
+
+                    <button id="detail-chat-btn" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Ask AI for details</button>
+                </div>
+            </div>
+
+            <div class="analysis-grid" style="margin-top: 60px;">
+                
+                <div class="analysis-card glass-card reveal-up delay-100" style="border-top: 4px solid #10b981;">
+                    <h3>✅ What People Love</h3>
+                    <ul class="check-list">
+                        <li><strong>Variety:</strong> You find houses here that aren't on the big platforms like Center Parcs.</li>
+                        <li><strong>Value for Money:</strong> Often cheaper than the big commercial parks with swimming pools.</li>
+                        <li><strong>Nature:</strong> Many locations are deep in the Brabantse forests or dunes.</li>
+                    </ul>
+                </div>
+
+                <div class="analysis-card glass-card reveal-up delay-200" style="border-top: 4px solid #f59e0b;">
+                    <h3>⚠️ Things to Consider</h3>
+                    <ul class="check-list warning">
+                        <li><strong>No Central Facilities:</strong> Most of these homes don't have a big pool or animation team.</li>
+                        <li><strong>Variable Quality:</strong> Since they are individual homes, the decor varies per house.</li>
+                        <li><strong>Car Needed:</strong> Many locations are remote and hard to reach by public transport.</li>
+                    </ul>
+                </div>
+
+                <div class="analysis-card glass-card reveal-up delay-300">
+                    <h3>📊 AI Rating Breakdown</h3>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Price / Quality</span> <span>9.5</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:95%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Privacy</span> <span>9.2</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:92%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
+                    </div>
+
+                    <div>
+                        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:0.9rem;"><span>Facilities</span> <span>7.5</span></div>
+                        <div style="height:8px; background:#e2e8f0; border-radius:4px; margin-top:5px;"><div style="width:75%; height:100%; background:var(--primary); border-radius:4px;"></div></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="{% static 'main/script.js' %}"></script>
+</body>
+</html>

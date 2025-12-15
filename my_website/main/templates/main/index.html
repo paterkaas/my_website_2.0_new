@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelCompAInion | Your AI Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <meta name="google-site-verification" content="FB85txyqKLPrPDnRmIVpJXcJ6pOLEfAiqgO13RSW2MQ" />
+</head>
+<body>
+
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div id="nav-placeholder"></div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text-wrapper reveal-up">
+                <h1>Discover Brabant without <span class="highlight-brush">Booking Anxiety</span>.</h1>
+                <p>Your personal AI assistant that digs deep into thousands of reviews. No tourist traps, just hidden gems.</p>
+                <div class="cta-group">
+                    <button id="start-chat-btn" class="btn btn-primary">Ask the AI Assistant</button>
+                    <a href="#destinations" class="btn btn-secondary">Explore Top Spots</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper reveal-up delay-200">
+                 <img src="{% static 'main/assets/test-image.png' %}" alt="AI Travel" class="organic-shape">
+            </div>
+        </div>
+    </header>
+
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2>The Trust Check</h2>
+                <p>Why rely on stars? Our AI digs deeper.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card reveal-up delay-100">
+                    <div class="icon-box">🔍</div>
+                    <h3>We Scan Reviews</h3>
+                    <p>We analyze thousands of guest reviews to find patterns others miss.</p>
+                </div>
+                <div class="feature-card glass-card reveal-up delay-200">
+                    <div class="icon-box">🧠</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our Insider AI filters noise and checks if "quiet" really means quiet.</p>
+                </div>
+                <div class="feature-card glass-card reveal-up delay-300">
+                    <div class="icon-box">✅</div>
+                    <h3>Honest Verdict</h3>
+                    <p>No marketing stunts. Just data-driven advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destinations" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2>Curated by AI, <br>Verified by Locals.</h2>
+            </div>
+            
+            <div class="destinations-grid">
+                
+                <div class="card reveal-up delay-100">
+                    <div class="card-image-header">
+                        <span class="badge">9.0 AI Score</span>
+                        <img src="{% static 'main/assets/bungalownet-image.jpg' %}" alt="Bungalow.net" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3>Bungalow.net (Brabant)</h3>
+                        <p class="location">📍 Various Locations</p>
+                        <p class="description">Hidden gems, private cottages, and nature stays in the forest.</p>
+                        <a href="{% url 'bungalownet' %}" class="btn-link">Read Analysis &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="card reveal-up delay-100">
+                    <div class="card-image-header">
+                        <span class="badge">9.4 AI Score</span>
+                        <img src="{% static 'main/assets/allcamps-image.jpg' %}" alt="Allcamps Glamping" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3>Allcamps</h3>
+                        <p class="location">📍 Best Campsites</p>
+                        <p class="description">Luxury Glamping & Mobile Homes at top locations.</p>
+                        <a href="{% url 'allcamps' %}" class="btn-link">Read Analysis &rarr;</a>
+                    </div>
+                </div>
+                
+                <div class="card reveal-up delay-100">
+                    <div class="card-image-header">
+                        <span class="badge">9.6 AI Score</span>
+                        <img src="{% static 'main/assets/beeksebergen-image.jpg' %}" alt="Beekse Bergen" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3>Safaripark Beekse Bergen</h3>
+                        <p class="location">📍 Hilvarenbeek</p>
+                        <p class="description">The ultimate safari experience. Sleep literally among the giraffes and lions.</p>
+                        <a href="{% url 'beeksebergen' %}" class="btn-link">Read Analysis &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="card reveal-up delay-200">
+                    <div class="card-image-header">
+                        <span class="badge">9.8 AI Score</span>
+                        <img src="{% static 'main/assets/terspegelt-image.jpg' %}" alt="Terspegelt" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3>Recreatiepark Terspegelt</h3>
+                        <p class="location">📍 Eersel</p>
+                        <p class="description">5-star luxury with a unique indoor beach.</p>
+                        <a href="{% url 'terspegelt' %}" class="btn-link">Read Analysis &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="card reveal-up delay-200">
+                    <div class="card-image-header">
+                        <span class="badge">9.5 AI Score</span>
+                        <img src="{% static 'main/assets/depaal-image.jpg' %}" alt="Camping de Paal" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3>Camping de Paal</h3>
+                        <p class="location">📍 Bergeijk</p>
+                        <p class="description">Best kids campsite in Europe. Amazing animation.</p>
+                        <a href="{% url 'depaal' %}" class="btn-link">Read Analysis &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="card reveal-up delay-300">
+                    <div class="card-image-header">
+                        <span class="badge">9.2 AI Score</span>
+                        <img src="{% static 'main/assets/efteling-image.jpg' %}" alt="Efteling Hotel" class="card-img">
+                    </div>
+                    <div class="card-content">
+                        <h3>Efteling Hotel</h3>
+                        <p class="location">📍 Kaatsheuvel</p>
+                        <p class="description">Sleep inside the fairytale. Includes early access.</p>
+                        <a href="{% url 'efteling' %}" class="btn-link">Read Analysis &rarr;</a>
+                    </div>
+                </div>
+
+            </div> 
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="{% static 'main/script.js' %}"></script>
+</body>
+</html>
