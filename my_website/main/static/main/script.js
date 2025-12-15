@@ -1,16 +1,16 @@
 /* ==========================================================================
-   0. GOOGLE ANALYTICS (Automatische Injectie)
+   0. GOOGLE ANALYTICS (Automatic Injection)
    ========================================================================== */
 (function() {
-    const gaMeasurementId = 'G-ECRD9C1T9X'; // Jouw ID
+    const gaMeasurementId = 'G-ECRD9C1T9X'; // Your ID
 
-    // 1. Laad het Google Script bestand
+    // 1. Load the Google Script file
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
     document.head.appendChild(script);
 
-    // 2. Start de meting
+    // 2. Start measurement
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -20,10 +20,10 @@
 document.addEventListener('DOMContentLoaded', () => {
  
     /* ==========================================================================
-       1. SITE BUILDER (Injecteert Header, Footer & Chatbot)
+       1. SITE BUILDER (Injects Header, Footer & Chatbot)
        ========================================================================== */
     
-    // --- A. Defineer de HTML ---
+    // --- A. Define the HTML ---
     
     const navbarHTML = `
     <nav class="navbar">
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/#destinations">Destinations</a></li>
-                <li><a href="/contact/">Contact</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <button class="chat-toggle" id="chat-toggle">💬</button>
     `;
 
-    // --- B. Injecteer de HTML in de pagina ---
+    // --- B. Inject the HTML into the page ---
     
     const navPlaceholder = document.getElementById('nav-placeholder');
     const footerPlaceholder = document.getElementById('footer-placeholder');
@@ -85,17 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navPlaceholder) navPlaceholder.innerHTML = navbarHTML;
     if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
     
-    // Voorkom dubbele injectie als het script per ongeluk 2x laadt
+    // Prevent double injection if the script loads twice accidentally
     if (!document.getElementById('chat-widget')) {
         document.body.insertAdjacentHTML('beforeend', chatHTML);
     }
 
 
     /* ==========================================================================
-       2. INTERACTIES & NAVIGATIE
+       2. INTERACTIONS & NAVIGATION
        ========================================================================== */
 
-    // --- Mobiel Menu (Hamburger) ---
+    // --- Mobile Menu (Hamburger) ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Scroll Reveal (Animaties) ---
+    // --- Scroll Reveal (Animations) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================================================
-       3. CHATBOT LOGICA (MET ERROR CHECK)
+       3. CHATBOT LOGIC (WITH ERROR CHECK)
        ========================================================================== */
 
     const chatWidget = document.getElementById('chat-widget');
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         div.classList.add('message', sender);
         if(id) div.id = id;
         
-        // Links omzetten naar knoppen
+        // Convert links to buttons
         const urlRegex = /(https?:\/\/[^\s]+)/g;
         const htmlContent = text.replace(urlRegex, function(url) {
             return `<br><a href="${url}" target="_blank" class="chat-button">Claim Your Deal ↗</a><br>`;
@@ -185,39 +185,39 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = userInput.value.trim();
         if (text === "") return;
 
-        // 1. Toon bericht van gebruiker
+        // 1. Show user message
         addMessage(text, 'user');
         userInput.value = '';
 
-        // 2. Toon 'Thinking...' status
+        // 2. Show 'Thinking...' status
         const loadingId = 'loading-' + Date.now();
         addMessage("Thinking...", 'bot', loadingId);
 
         try {
-            // Verstuur naar Django backend (/api/chat)
+            // Send to Django backend (/api/chat)
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: text })
             });
 
-            // 3. Lees het antwoord
+            // 3. Read the response
             const data = await response.json();
             
-            // Verwijder 'Thinking...'
+            // Remove 'Thinking...'
             const loadingMsg = document.getElementById(loadingId);
             if (loadingMsg) loadingMsg.remove();
 
-            // 4. CHECK OP ANTWOORD OF ERROR
+            // 4. CHECK FOR ANSWER OR ERROR
             if (data.reply) {
-                // Succes: Toon antwoord van AI
+                // Success: Show AI response
                 addMessage(data.reply, 'bot');
             } else if (data.error) {
-                // Fout in Backend: Toon de echte error
+                // Error in Backend: Show actual error
                 console.error("Backend Error:", data.error);
                 addMessage("⚠️ System Error: " + data.error, 'bot');
             } else {
-                // Geen data: Vage fout
+                // No data: Vague error
                 addMessage("I'm having trouble connecting (No valid data received).", 'bot');
             }
 
@@ -233,5 +233,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if(userInput) userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleUserMessage();
     });
+
+
+    /* ==========================================================================
+       4. COOKIE BANNER LOGIC
+       ========================================================================== */
+    
+    // Check if the user has already accepted
+    if (!localStorage.getItem('cookieConsent')) {
+        
+        const cookieHTML = `
+        <div class="cookie-banner" id="cookie-banner">
+            <div class="cookie-content">
+                <h4>🍪 Cookies & Privacy</h4>
+                <p>We use cookies and affiliate links to keep this website free. By continuing, you agree to our policies.</p>
+            </div>
+            <button class="cookie-btn" id="accept-cookies">Okay, continue!</button>
+        </div>
+        `;
+
+        // Add to the page
+        document.body.insertAdjacentHTML('beforeend', cookieHTML);
+
+        // Make the button work
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'true'); // Remember choice
+            document.getElementById('cookie-banner').remove(); // Remove banner
+        });
+    }
 
 });
