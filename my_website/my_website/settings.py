@@ -82,12 +82,23 @@ WSGI_APPLICATION = 'my_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# Standaard database instellingen (voor op jouw laptop)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# HACK voor Vercel:
+# Als we op Vercel zijn, gebruiken we een 'dummy' database.
+# Dit voorkomt de SQLite error, maar betekent dat je geen data kunt opslaan.
+if 'VERCEL' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.dummy',
+        }
+    }
 
 
 # Password validation
