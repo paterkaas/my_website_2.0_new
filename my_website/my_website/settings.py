@@ -147,4 +147,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
-api_key = os.environ.get('OPENAI_API_KEY')
+api_key = os.environ.get('GEMINI_API_KEY')
+# Zorg dat formulieren werken op je beveiligde domein
+CSRF_TRUSTED_ORIGINS = [
+    'https://travelcompainion.com',
+    'https://www.travelcompainion.com',
+    'https://www.travelcompainon.com',
+    'https://travelcompainion.vercel.app', # Voor de zekerheid ook je vercel subdomein
+]
