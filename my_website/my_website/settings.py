@@ -29,9 +29,9 @@ SECRET_KEY = 'django-insecure-)+h%2b(7*=s7(y-vatubzc4m*o76bb#&koj=lzm#p%t4us+gfr
 # We zetten dit op False als we op Render zijn, anders True.
 # Render zet automatisch een 'RENDER' variabele.
 
-# if 'RENDER' in os.environ or 'VERCEL' in os.environ:
-#   DEBUG = False
-# else:
+if 'RENDER' in os.environ or 'VERCEL' in os.environ:
+   DEBUG = False
+else:
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
