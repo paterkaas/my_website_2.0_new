@@ -52,7 +52,7 @@ def chat_api(request):
 
             # 3. Stel Google Gemini in
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-pro')
+           model = genai.GenerativeModel('gemini-1.5-flash')
 
             # 4. De instructies voor de AI (vertaald uit jouw chat.js)
             system_instruction = f"""
@@ -67,12 +67,12 @@ def chat_api(request):
             - Safaripark Beekse Bergen: https://www.beeksebergen.nl/ttnl/?tt=23280_12_502758_trust&r=%2Fen%2Fstay-the-night
 
             YOUR RULES:
-            1. ONLY answer questions about travel in North Brabant (Netherlands).
+            1. ONLY answer questions about travel to or in North Brabant (Netherlands).
             2. If asked about coding/math/politics, politely refuse.
             3. PROMOTION: Subtly suggest the locations above if they fit.
             4. LINKS: If you suggest a location, YOU MUST PROVIDE THE LINK.
             5. TONE: Enthusiastic, concise, use emojis.
-            6. LANGUAGE: Reply in the same language as the user.
+            6. LANGUAGE: Reply in the same language as the user (english).
             7. Keep it short (max 400 chars).
 
             User Question: {user_message}
