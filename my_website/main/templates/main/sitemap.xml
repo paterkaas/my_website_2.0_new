@@ -3,56 +3,63 @@
 
     <url>
         <loc>https://travelcompainion.com/</loc>
-        <lastmod>2025-05-20</lastmod>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>https://travelcompainion.com/terspegelt.html</loc>
-        <lastmod>2025-05-20</lastmod>
+        <loc>https://travelcompainion.com/allcamps/</loc>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://travelcompainion.com/depaal.html</loc>
-        <lastmod>2025-05-20</lastmod>
+        <loc>https://travelcompainion.com/beeksebergen/</loc>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://travelcompainion.com/efteling.html</loc>
-        <lastmod>2025-05-20</lastmod>
+        <loc>https://travelcompainion.com/bungalownet/</loc>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://travelcompainion.com/bungalownet.html</loc>
-        <lastmod>2025-05-20</lastmod>
+        <loc>https://travelcompainion.com/depaal/</loc>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://travelcompainion.com/allcamps.html</loc>
-        <lastmod>2025-05-20</lastmod>
+        <loc>https://travelcompainion.com/efteling/</loc>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://travelcompainion.com/contact.html</loc>
-        <lastmod>2025-05-20</lastmod>
+        <loc>https://travelcompainion.com/terspegelt/</loc>
+        <lastmod>2025-12-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://travelcompainion.com/contact/</loc>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
-        <loc>https://travelcompainion.com/privacy.html</loc>
-        <lastmod>2025-05-20</lastmod>
+        <loc>https://travelcompainion.com/privacy/</loc>
+        <lastmod>2025-12-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>

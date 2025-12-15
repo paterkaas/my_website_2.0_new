@@ -13,6 +13,8 @@ urlpatterns = [
     path('depaal/', views.depaal, name='depaal'),
     path('terspegelt/', views.terspegelt, name='terspegelt'),
     path('efteling/', views.efteling, name='efteling'),
+    path('sitemap.xml', TemplateView.as_view(template_name='main/sitemap.xml', content_type='text/xml')),
+]
 
     # <--- HIER IS DE NIEUWE REGEL VOOR DE CHATBOT:
     path('api/chat', views.chat_api, name='chat_api'),
