@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     
     // --- A. Defineer de HTML ---
-    // LET OP: Ik heb de .html links vervangen door '/' paden voor Django URLs
-
+    
     const navbarHTML = `
     <nav class="navbar">
         <div class="container">
@@ -86,7 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navPlaceholder) navPlaceholder.innerHTML = navbarHTML;
     if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
     
-    document.body.insertAdjacentHTML('beforeend', chatHTML);
+    // Voorkom dubbele injectie als het script per ongeluk 2x laadt
+    if (!document.getElementById('chat-widget')) {
+        document.body.insertAdjacentHTML('beforeend', chatHTML);
+    }
 
 
     /* ==========================================================================
@@ -124,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================================================
-       3. CHATBOT LOGICA
+       3. CHATBOT LOGICA (MET ERROR CHECK)
        ========================================================================== */
 
     const chatWidget = document.getElementById('chat-widget');
@@ -137,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatBody = document.getElementById('chat-body');
 
     function toggleChat() {
+        if (!chatWidget) return;
         chatWidget.classList.toggle('active');
         if (chatWidget.classList.contains('active') && userInput) {
             userInput.focus();
@@ -182,36 +185,47 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = userInput.value.trim();
         if (text === "") return;
 
+        // 1. Toon bericht van gebruiker
         addMessage(text, 'user');
         userInput.value = '';
 
+        // 2. Toon 'Thinking...' status
         const loadingId = 'loading-' + Date.now();
         addMessage("Thinking...", 'bot', loadingId);
 
         try {
-            // Let op: Dit pad '/api/chat' moet je later in Django urls.py aanmaken!
+            // Verstuur naar Django backend (/api/chat)
             const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: text })
             });
 
+            // 3. Lees het antwoord
             const data = await response.json();
             
+            // Verwijder 'Thinking...'
             const loadingMsg = document.getElementById(loadingId);
             if (loadingMsg) loadingMsg.remove();
 
+            // 4. CHECK OP ANTWOORD OF ERROR
             if (data.reply) {
+                // Succes: Toon antwoord van AI
                 addMessage(data.reply, 'bot');
+            } else if (data.error) {
+                // Fout in Backend: Toon de echte error
+                console.error("Backend Error:", data.error);
+                addMessage("⚠️ System Error: " + data.error, 'bot');
             } else {
-                addMessage("I'm having trouble connecting right now.", 'bot');
+                // Geen data: Vage fout
+                addMessage("I'm having trouble connecting (No valid data received).", 'bot');
             }
 
         } catch (error) {
-            console.error('Chat error:', error);
+            console.error('Network/Script error:', error);
             const loadingMsg = document.getElementById(loadingId);
             if (loadingMsg) loadingMsg.remove();
-            addMessage("Oops, something went wrong.", 'bot');
+            addMessage("⚠️ Network Error. Check console for details.", 'bot');
         }
     }
 
