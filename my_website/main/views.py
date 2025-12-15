@@ -31,6 +31,9 @@ def terspegelt(request):
 def efteling(request):
     return render(request, 'main/efteling.html')
 
+def privacy(request):
+    return render(request, 'main/privacy.html')
+
 
 # --- CHATBOT API (De Logica) ---
 

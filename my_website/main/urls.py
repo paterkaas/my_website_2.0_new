@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
+    path('privacy/', views.privacy, name='privacy'),                             
     
     # De nieuwe pagina's
     path('allcamps/', views.allcamps, name='allcamps'),
