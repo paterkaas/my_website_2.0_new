@@ -7,7 +7,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "wsgi.py"
+            "dest": "my_website/wsgi.py"
         }
     ]
 }
