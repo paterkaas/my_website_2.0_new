@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/#destinations">Destinations</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
